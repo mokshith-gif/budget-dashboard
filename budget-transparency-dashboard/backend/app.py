@@ -21,14 +21,14 @@ LATEST_YEAR = "2025-26"
 UNDERUTIL_THRESHOLD = 40.0   # utilization below this = red flag
 SPIKE_THRESHOLD = 100.0      # yoy change above this = red flag
 
-
 def seed_if_empty():
+    db.init_db()
+
     if db.count("departments") == 0:
         seed.run()
 
 
 seed_if_empty()
-
 
 # --------------------------------------------------------------------------
 # Formatting helpers
